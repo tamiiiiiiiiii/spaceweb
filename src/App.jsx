@@ -1,24 +1,35 @@
-import logo from './logo.svg';
+﻿import { BrowserRouter, NavLink, Route, Routes } from 'react-router-dom';
+import Home from './pages/Home/Home';
+import Planets from './pages/Planets/Planets';
+import Galaxy from './pages/Galaxy/Galaxy';
+import Missions from './pages/Missions/Missions';
 import './App.css';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div className="space-app">
+        <div className="space-app__bg" aria-hidden="true" />
+        <header className="topbar">
+          <div className="brand">SPACE.ONE</div>
+          <nav>
+            <NavLink to="/" end>
+             Солнечная система
+            </NavLink>
+            <NavLink to="/planet-lab">Планеты</NavLink>
+            <NavLink to="/galaxies">Галактики</NavLink>
+            <NavLink to="/missions">Миссии</NavLink>
+          </nav>
+        </header>
+
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/planet-lab" element={<Planets />} />
+          <Route path="/galaxies" element={<Galaxy />} />
+          <Route path="/missions" element={<Missions />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 

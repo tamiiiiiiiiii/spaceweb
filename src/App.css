@@ -1,38 +1,194 @@
-.App {
-  text-align: center;
+﻿:root {
+  --ink: #f3f7ff;
+  --muted: #b6c2e5;
+  --line: rgba(255, 255, 255, 0.18);
+  --glass: rgba(14, 20, 45, 0.52);
+  --focus: #65dbff;
+  --radius: 18px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+.space-app {
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
   min-height: 100vh;
+  color: var(--ink);
+  position: relative;
+  overflow: hidden;
+}
+
+.space-app__bg {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(87, 195, 255, 0.25), transparent 36%),
+    radial-gradient(circle at 85% 8%, rgba(247, 170, 70, 0.2), transparent 42%),
+    linear-gradient(165deg, #050913, #0f1734 55%, #1e1b38);
+  animation: bg-shift 24s ease-in-out infinite alternate;
+}
+
+.space-app__bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.42) 0.8px, transparent 0.8px);
+  background-size: 44px 44px;
+  opacity: 0.32;
+}
+
+.topbar {
+  width: min(1120px, 100% - 40px);
+  margin: 22px auto 0;
+  padding: 14px 18px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(9, 13, 31, 0.72);
+  backdrop-filter: blur(4px);
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  animation: fade-up 550ms ease-out;
 }
 
-.App-link {
-  color: #61dafb;
+.brand {
+  font-weight: 800;
+  letter-spacing: 0.14em;
+  font-size: 0.86rem;
 }
 
-@keyframes App-logo-spin {
+.topbar nav {
+  display: flex;
+  gap: 10px;
+}
+
+.topbar a {
+  color: var(--muted);
+  text-decoration: none;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  padding: 8px 14px;
+  font-weight: 600;
+  transition: 200ms ease;
+}
+
+.topbar a:hover,
+.topbar a.active {
+  color: var(--ink);
+  border-color: rgba(101, 219, 255, 0.55);
+  background: rgba(101, 219, 255, 0.12);
+}
+
+.page {
+  width: min(1120px, 100% - 40px);
+  margin: 20px auto 56px;
+}
+
+.eyebrow {
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.22em;
+  color: #7ee4ff;
+  font-size: 0.75rem;
+}
+
+@keyframes spin {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
+  }
+}
+
+@keyframes wobble {
+  0%,
+  100% {
+    transform: rotateY(-12deg) rotateX(8deg);
+  }
+
+  50% {
+    transform: rotateY(12deg) rotateX(-6deg);
+  }
+}
+
+@keyframes modal-planet {
+  0%,
+  100% {
+    transform: translateY(0) rotateY(-14deg) rotateX(8deg);
+  }
+
+  50% {
+    transform: translateY(-7px) rotateY(14deg) rotateX(-6deg);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modal-in {
+  from {
+    transform: scale(0.96) translateY(8px);
+    opacity: 0;
+  }
+
+  to {
+    transform: scale(1) translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes fade-up {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes bg-shift {
+  from {
+    filter: saturate(1);
+  }
+
+  to {
+    filter: saturate(1.18);
+  }
+}
+
+@media (max-width: 860px) {
+  .topbar {
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
   }
 }

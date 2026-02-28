@@ -1,0 +1,125 @@
+export const planets = [
+  {
+    id: 'mercury',
+    name: 'Меркурий',
+    color: 'linear-gradient(140deg, #9da2ab, #727982)',
+    diameter: '4 879 км',
+    day: '58,6 земных суток',
+    year: '88 земных суток',
+    description: 'Ближайшая к Солнцу планета с резкими перепадами температуры.',
+    size: 'sm',
+  },
+  {
+    id: 'venus',
+    name: 'Венера',
+    color: 'linear-gradient(140deg, #c58d40, #f7ca83)',
+    diameter: '12 104 км',
+    day: '243 земных суток',
+    year: '225 земных суток',
+    description: 'Плотная атмосфера Венеры создаёт мощный парниковый эффект.',
+    size: 'md',
+  },
+  {
+    id: 'earth',
+    name: 'Земля',
+    color: 'linear-gradient(140deg, #3180ff, #66dca8)',
+    diameter: '12 742 км',
+    day: '24 часа',
+    year: '365 дней',
+    description: 'Единственная известная планета, где подтверждено существование жизни.',
+    size: 'md',
+  },
+  {
+    id: 'mars',
+    name: 'Марс',
+    color: 'linear-gradient(140deg, #c84e2b, #ef8f54)',
+    diameter: '6 779 км',
+    day: '24 ч 37 мин',
+    year: '687 дней',
+    description: 'Красная планета с гигантским вулканом Олимп - самым высоким в системе.',
+    size: 'sm',
+  },
+  {
+    id: 'jupiter',
+    name: 'Юпитер',
+    color: 'linear-gradient(140deg, #b48d6f, #f0cfb3)',
+    diameter: '139 820 км',
+    day: '9 ч 56 мин',
+    year: '11,86 лет',
+    description: 'Крупнейшая планета с мощными бурями и сильнейшим магнитным полем.',
+    size: 'lg',
+  },
+  {
+    id: 'saturn',
+    name: 'Сатурн',
+    color: 'linear-gradient(140deg, #bfa46f, #f5dd9e)',
+    diameter: '116 460 км',
+    day: '10 ч 33 мин',
+    year: '29,45 лет',
+    description: 'Известен своей выразительной системой колец из льда и пыли.',
+    size: 'lg',
+    ring: true,
+  },
+  {
+    id: 'uranus',
+    name: 'Уран',
+    color: 'linear-gradient(140deg, #7ad8de, #9ff1f5)',
+    diameter: '50 724 км',
+    day: '17 ч 14 мин',
+    year: '84 года',
+    description: 'Ледяной гигант, вращающийся почти на боку относительно своей орбиты.',
+    size: 'lg',
+    ring: true,
+  },
+  {
+    id: 'neptune',
+    name: 'Нептун',
+    color: 'linear-gradient(140deg, #2f63d8, #6fa6ff)',
+    diameter: '49 244 км',
+    day: '16 ч 6 мин',
+    year: '164,8 года',
+    description: 'Самая дальняя планета, известная сверхзвуковыми ветрами в атмосфере.',
+    size: 'lg',
+  },
+];
+
+export const facts = [
+  'Солнечная система сформировалась около 4,6 миллиарда лет назад.',
+  'Свет от Солнца до Земли летит примерно 8 минут 20 секунд.',
+  'Внутри Юпитера поместилось бы более 1 300 планет размером с Землю.',
+];
+
+export const jwstGallery = [
+  {
+    id: 'pillars-of-creation',
+    title: 'Столпы Творения',
+    image:
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/6/68/Pillars_of_creation_2014_HST_WFC3-UVIS_full-res_denoised.jpg/250px-Pillars_of_creation_2014_HST_WFC3-UVIS_full-res_denoised.jpg',
+    source: 'https://science.nasa.gov/mission/webb/first-images-gallery/',
+    text: 'Один из самых известных снимков JWST: облака газа и пыли в области активного звездообразования.',
+  },
+  {
+    id: 'deep-field',
+    title: 'Глубокое поле SMACS 0723',
+    image:
+      'https://www.rbc.ua/static/img/m/a/main_image_deep_field_smacs0723_5mb_480x270.jpg ',
+    source: 'https://science.nasa.gov/missions/webb/nasas-webb-delivers-deepest-infrared-image-of-universe-yet/',
+    text: 'На снимке видны тысячи далёких галактик, включая очень ранние этапы развития Вселенной.',
+  },
+  {
+    id: 'cartwheel-galaxy',
+    title: 'Галактика Колесо Телеги',
+    image:
+      'https://sun9-41.userapi.com/impg/Riy8bPVoiNiNFnci_-2nZ0To3iy5gvGjnnrmlg/huYsy549F64.jpg?size=500x500&quality=96&sign=3802db88a76e7386d9c0a46c8f58ef55&type=news_post_photo',
+    source: 'https://science.nasa.gov/missions/webb/jwst-sees-cartwheel-galaxy-turn/',
+    text: 'Редкая кольцевая структура, возникшая после столкновения галактик.',
+  },
+  {
+    id: 'stephans-quintet',
+    title: 'Квинтет Стефана',
+    image:
+      'https://commons.wikimedia.org/wiki/Special:FilePath/Stephan%27s%20Quintet%20taken%20by%20James%20Webb%20Space%20Telescope.jpg',
+    source: 'https://science.nasa.gov/mission/webb/first-images-gallery/',
+    text: 'Компактная группа взаимодействующих галактик с мощными зонами звездообразования.',
+  },
+];

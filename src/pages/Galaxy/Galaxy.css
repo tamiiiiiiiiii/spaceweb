@@ -1,0 +1,171 @@
+﻿.galaxies-page {
+  content-visibility: auto;
+  contain-intrinsic-size: 1px 1000px;
+}
+
+.lab-heading {
+  margin-bottom: 18px;
+  animation: fade-up 550ms ease-out;
+}
+
+.lab-heading h1 {
+  margin: 0 0 14px;
+  font-size: clamp(2rem, 6vw, 4rem);
+  line-height: 1;
+}
+
+.lab-heading p {
+  margin: 0;
+  color: var(--muted);
+  max-width: 58ch;
+}
+
+.glass-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: var(--glass);
+  backdrop-filter: blur(4px);
+  padding: 17px;
+  color: var(--ink);
+  animation: fade-up 600ms ease-out;
+}
+
+.galaxy-intro {
+  margin-bottom: 18px;
+}
+
+.galaxy-intro h2 {
+  margin: 0 0 10px;
+}
+
+.galaxy-intro p {
+  margin: 0;
+  color: var(--muted);
+}
+
+.gallery-grid {
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.gallery-card {
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  background: rgba(8, 11, 30, 0.74);
+  padding: 12px;
+  animation: fade-up 600ms ease-out;
+  display: flex;
+  flex-direction: column;
+  contain: layout paint;
+}
+
+.gallery-card h3 {
+  margin: 10px 0 8px;
+}
+
+.gallery-card p {
+  margin: 0 0 10px;
+  color: var(--muted);
+}
+
+.gallery-card a {
+  color: #87e8ff;
+  text-decoration: none;
+  margin-top: auto;
+}
+
+.gallery-card a:hover {
+  text-decoration: underline;
+}
+
+.gallery-image-wrap {
+  border: 0;
+  background: transparent;
+  padding: 0;
+  width: 100%;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.gallery-image {
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  display: block;
+  transition: transform 250ms ease;
+  will-change: transform;
+}
+
+.gallery-image-wrap:hover .gallery-image {
+  transform: scale(1.05);
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(3, 5, 16, 0.78);
+  backdrop-filter: blur(2px);
+  display: grid;
+  place-items: center;
+  padding: 20px;
+  z-index: 40;
+  animation: fade-in 220ms ease-out;
+}
+
+.planet-modal {
+  width: min(540px, 100%);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  background: linear-gradient(155deg, rgba(16, 22, 52, 0.98), rgba(7, 10, 27, 0.98));
+  padding: 24px;
+  animation: modal-in 240ms ease-out;
+  will-change: transform;
+}
+
+.planet-modal h3 {
+  margin: 14px 0 10px;
+  font-size: 2rem;
+}
+
+.planet-modal p,
+.planet-modal li {
+  color: var(--muted);
+}
+
+.galaxy-modal {
+  width: min(760px, 100%);
+}
+
+.galaxy-modal__img {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
+}
+
+.galaxy-modal a {
+  display: inline-block;
+  color: #87e8ff;
+  margin-bottom: 12px;
+  text-decoration: none;
+}
+
+.galaxy-modal a:hover {
+  text-decoration: underline;
+}
+
+.close-button {
+  border: 1px solid rgba(101, 219, 255, 0.6);
+  background: rgba(101, 219, 255, 0.14);
+  color: var(--ink);
+  border-radius: 10px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.close-button:hover {
+  background: rgba(101, 219, 255, 0.26);
+}
