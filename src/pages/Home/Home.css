@@ -177,5 +177,44 @@
   .hero {
     grid-template-columns: 1fr;
     min-height: auto;
+    gap: 14px;
+  }
+
+  .hero__content {
+    text-align: center;
+  }
+
+  .hero p {
+    margin-inline: auto;
+  }
+
+  .orbit-art {
+    width: min(360px, 92vw);
+  }
+}
+
+@media (max-width: 600px) {
+  .hero h1 {
+    margin-bottom: 10px;
+    line-height: 1.08;
+  }
+
+  .hero__cta {
+    width: 100%;
+    text-align: center;
+  }
+
+  .facts-grid,
+  .timeline-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .glass-card,
+  .timeline-grid article {
+    padding: 14px;
+  }
+
+  .orbit-art__sun {
+    width: 66px;
   }
 }

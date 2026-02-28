@@ -1,6 +1,6 @@
-﻿.lab-page {
-  content-visibility: auto;
-  contain-intrinsic-size: 1px 1000px;
+.lab-page {
+  content-visibility: visible;
+  contain-intrinsic-size: none;
 }
 
 .lab-heading {
@@ -113,26 +113,35 @@
   animation: wobble 4s ease-in-out infinite;
 }
 
-.modal-overlay {
+.planet-overlay {
   position: fixed;
   inset: 0;
-  background: rgba(3, 5, 16, 0.78);
-  backdrop-filter: blur(2px);
-  display: grid;
-  place-items: center;
-  padding: 20px;
-  z-index: 40;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100dvh;
+  background: rgba(3, 5, 16, 0.85) !important;
+  backdrop-filter: blur(4px);
+  display: block;
+  padding: 0;
+  z-index: 9999;
   animation: fade-in 220ms ease-out;
+  overflow: hidden;
 }
 
-.planet-modal {
-  width: min(540px, 100%);
+.planet-dialog {
+  position: absolute;
+  top: clamp(10px, 6vh, 44px);
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(540px, calc(100% - 12px));
   border: 1px solid var(--line);
   border-radius: 20px;
   background: linear-gradient(155deg, rgba(16, 22, 52, 0.98), rgba(7, 10, 27, 0.98));
   padding: 24px;
   animation: modal-in 240ms ease-out;
   will-change: transform;
+  overflow: hidden;
+  max-height: calc(100dvh - clamp(18px, 7vh, 56px));
 }
 
 .planet-modal__visual {
@@ -152,13 +161,13 @@
   animation: spin 12s linear infinite;
 }
 
-.planet-modal h3 {
+.planet-dialog h3 {
   margin: 14px 0 10px;
   font-size: 2rem;
 }
 
-.planet-modal p,
-.planet-modal li {
+.planet-dialog p,
+.planet-dialog li {
   color: var(--muted);
 }
 
@@ -176,7 +185,66 @@
 }
 
 @media (max-width: 860px) {
+  .planet-grid {
+    gap: 12px;
+    max-width: 100%;
+  }
+
+  .planet-card {
+    width: calc(50% - 8px);
+    min-width: 156px;
+  }
+
   .planet-ball--focus {
     --size: 108px;
   }
 }
+
+@media (max-width: 560px) {
+  .lab-heading h1 {
+    line-height: 1.08;
+  }
+
+  .planet-card {
+    width: 100%;
+    padding: 12px;
+  }
+
+  .planet-stage {
+    height: 112px;
+  }
+
+  .planet-dialog {
+    top: max(8px, env(safe-area-inset-top));
+    padding: 14px;
+    border-radius: 16px;
+    width: calc(100% - 8px);
+    max-height: calc(100dvh - max(12px, env(safe-area-inset-top)));
+  }
+
+  .planet-dialog h3 {
+    font-size: 1.35rem;
+    margin: 4px 0 6px;
+  }
+
+  .planet-modal__visual {
+    min-height: 84px;
+  }
+
+  .planet-modal__visual::before {
+    width: 86px;
+    height: 86px;
+  }
+
+  .planet-ball--focus {
+    --size: 72px;
+    animation-duration: 5s;
+  }
+
+  .planet-dialog ul {
+    margin: 0;
+    padding-left: 18px;
+  }
+}
+
+

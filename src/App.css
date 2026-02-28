@@ -58,6 +58,8 @@
 .topbar nav {
   display: flex;
   gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .topbar a {
@@ -178,9 +180,46 @@
 }
 
 @media (max-width: 860px) {
+  .space-app {
+    overflow-x: hidden;
+  }
+
   .topbar {
     flex-direction: column;
     gap: 12px;
+    width: min(1120px, 100% - 20px);
+    padding: 12px;
+  }
+
+  .topbar nav {
+    width: 100%;
+  }
+
+  .topbar a {
+    flex: 1 1 140px;
+    text-align: center;
+    padding: 9px 12px;
+  }
+
+  .page {
+    width: min(1120px, 100% - 20px);
+    margin: 16px auto 40px;
+  }
+}
+
+@media (max-width: 520px) {
+  .brand {
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+  }
+
+  .eyebrow {
+    font-size: 0.68rem;
+    letter-spacing: 0.18em;
+  }
+
+  .topbar a {
+    flex: 1 1 100%;
   }
 }
 

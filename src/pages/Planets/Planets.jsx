@@ -16,11 +16,9 @@ function Planets() {
       }
     };
 
-    document.body.style.overflow = 'hidden';
     window.addEventListener('keydown', onEsc);
 
     return () => {
-      document.body.style.overflow = '';
       window.removeEventListener('keydown', onEsc);
     };
   }, [selectedPlanet]);
@@ -63,18 +61,21 @@ function Planets() {
       </section>
 
       {activePlanet && (
-        <div
-          className="modal-overlay"
-          role="presentation"
-          onClick={() => setSelectedPlanet(null)}
-        >
+        <div className="planet-overlay" role="presentation" onClick={() => setSelectedPlanet(null)}>
           <article
-            className="planet-modal"
+            className="planet-dialog"
             role="dialog"
             aria-modal="true"
             aria-label={`Детали о планете ${activePlanet.name}`}
             onClick={(event) => event.stopPropagation()}
           >
+            <h3>{activePlanet.name}</h3>
+            <p>{activePlanet.description}</p>
+            <ul>
+              <li>Диаметр: {activePlanet.diameter}</li>
+              <li>Длительность суток: {activePlanet.day}</li>
+              <li>Период обращения: {activePlanet.year}</li>
+            </ul>
             <div className="planet-modal__visual">
               <span
                 className="planet-ball planet-ball--focus"
@@ -83,13 +84,6 @@ function Planets() {
                 {activePlanet.ring && <span className="planet-ring" />}
               </span>
             </div>
-            <h3>{activePlanet.name}</h3>
-            <p>{activePlanet.description}</p>
-            <ul>
-              <li>Диаметр: {activePlanet.diameter}</li>
-              <li>Длительность суток: {activePlanet.day}</li>
-              <li>Период обращения: {activePlanet.year}</li>
-            </ul>
             <button
               type="button"
               className="close-button"
